@@ -5,7 +5,7 @@ import {
   UsePipes,
   ValidationPipe,
 } from '@nestjs/common';
-import { CreateQuestionDto } from '../dto/create-question.dto';
+import { CreateQuestionDto } from '../_dto/create-question.dto';
 import { QuestionService } from '../services/question.service';
 import { QuizService } from '../services/quiz.service';
 

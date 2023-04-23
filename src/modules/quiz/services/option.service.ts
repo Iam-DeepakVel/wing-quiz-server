@@ -2,7 +2,7 @@ import { Inject, Injectable } from '@nestjs/common';
 import { Option } from '../entities/option.entity';
 import { TYPES } from 'src/core/types';
 import { Repository } from 'typeorm';
-import { CreateOptionDto } from '../dto/create-option.dto';
+import { CreateOptionDto } from '../_dto/create-option.dto';
 import { Question } from '../entities/question.entity';
 
 @Injectable()

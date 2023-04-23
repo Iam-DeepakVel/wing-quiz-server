@@ -1,7 +1,7 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { Repository } from 'typeorm';
 import { Question } from '../entities/question.entity';
-import { CreateQuestionDto } from '../dto/create-question.dto';
+import { CreateQuestionDto } from '../_dto/create-question.dto';
 import { TYPES } from 'src/core/types';
 import { Quiz } from '../entities/quiz.entity';
 

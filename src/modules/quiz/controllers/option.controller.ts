@@ -1,7 +1,7 @@
 import { Body, Controller, Post } from '@nestjs/common';
 import { QuestionService } from '../services/question.service';
 import { OptionService } from '../services/option.service';
-import { CreateOptionDto } from '../dto/create-option.dto';
+import { CreateOptionDto } from '../_dto/create-option.dto';
 
 @Controller('question/option')
 export class OptionController {
