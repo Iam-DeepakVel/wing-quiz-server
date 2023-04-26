@@ -9,9 +9,10 @@ import { questionProviders } from './repositories/question.providers';
 import { optionProviders } from './repositories/option.providers';
 import { OptionService } from './services/option.service';
 import { OptionController } from './controllers/option.controller';
+import { UserModule } from '../user/user.module';
 
 @Module({
-  imports: [DatabaseModule],
+  imports: [DatabaseModule, UserModule],
   controllers: [QuizController, QuestionController, OptionController],
   providers: [
     ...quizProviders,

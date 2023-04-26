@@ -6,6 +6,7 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
 } from 'typeorm';
+import { UserRoles } from '../enums/user.enum';
 
 @Entity({ name: 'users' })
 export class User {
@@ -39,6 +40,9 @@ export class User {
   @ApiProperty({
     description: 'When user was created',
   })
+  @Column({ type: 'enum', enum: UserRoles, default: UserRoles.MEMBER })
+  role: UserRoles;
+
   @CreateDateColumn()
   createdAt: Date;
   @ApiProperty({

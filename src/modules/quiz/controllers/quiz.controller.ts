@@ -5,14 +5,15 @@ import {
   HttpCode,
   Post,
   Param,
-  UsePipes,
-  ValidationPipe,
   ParseIntPipe,
+  UseGuards,
 } from '@nestjs/common';
 import { QuizService } from '../services/quiz.service';
 import { CreateQuizDto } from '../_dto/create-quiz.dto';
 import { Quiz } from '../entities/quiz.entity';
 import { ApiTags } from '@nestjs/swagger';
+import { AdminRoleGuard } from 'src/modules/auth/guard/admin-role.guard';
+import { JwtAuthGuard } from 'src/modules/auth/guard/jwt-auth.guard';
 
 @ApiTags('Quiz')
 @Controller('quiz')
@@ -30,7 +31,7 @@ export class QuizController {
 
   @Post()
   @HttpCode(200)
-  @UsePipes(ValidationPipe)
+  @UseGuards(JwtAuthGuard, AdminRoleGuard)
   createQuiz(@Body() quizData: CreateQuizDto) {
     return this.quizService.createNewQuiz(quizData);
   }

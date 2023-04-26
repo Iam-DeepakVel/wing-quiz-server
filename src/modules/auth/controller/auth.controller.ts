@@ -3,6 +3,7 @@ import { LocalAuthGuard } from '../guard/local-auth.guard';
 import { AuthService } from '../service/auth.service';
 import { JwtAuthGuard } from '../guard/jwt-auth.guard';
 import { ApiTags } from '@nestjs/swagger';
+import { AdminRoleGuard } from '../guard/admin-role.guard';
 
 @ApiTags('Auth')
 @Controller('auth')
@@ -17,6 +18,7 @@ export class AuthController {
   @UseGuards(JwtAuthGuard)
   @Get('current-user')
   getUser(@Request() req: any): Promise<any> {
+    console.log(req);
     return req.user;
   }
 }
