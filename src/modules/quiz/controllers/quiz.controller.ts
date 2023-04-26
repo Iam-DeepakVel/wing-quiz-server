@@ -12,7 +12,9 @@ import {
 import { QuizService } from '../services/quiz.service';
 import { CreateQuizDto } from '../_dto/create-quiz.dto';
 import { Quiz } from '../entities/quiz.entity';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('Quiz')
 @Controller('quiz')
 export class QuizController {
   constructor(private readonly quizService: QuizService) {}
